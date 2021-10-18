@@ -37,6 +37,8 @@ class GFTextField: UITextField {
     
     placeholder = StringConstants.SearchVC.GFTextField.placeholderText
     
+    returnKeyType = .go
+    
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

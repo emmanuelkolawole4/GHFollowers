@@ -18,6 +18,8 @@
 		4CFFCE52271D9F080089C81E /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE51271D9F080089C81E /* GFButton.swift */; };
 		4CFFCE54271DA4350089C81E /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE53271DA4350089C81E /* GFTextField.swift */; };
 		4CFFCE57271DA5F10089C81E /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE56271DA5F10089C81E /* StringConstants.swift */; };
+		4CFFCE5A271DBC350089C81E /* SearchVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE59271DBC350089C81E /* SearchVC+Extension.swift */; };
+		4CFFCE5C271DC1F30089C81E /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE5B271DC1F30089C81E /* FollowerListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		4CFFCE51271D9F080089C81E /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		4CFFCE53271DA4350089C81E /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		4CFFCE56271DA5F10089C81E /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		4CFFCE59271DBC350089C81E /* SearchVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+Extension.swift"; sourceTree = "<group>"; };
+		4CFFCE5B271DC1F30089C81E /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +166,10 @@
 		4CFFCE4B271C83450089C81E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4CFFCE58271DBC0D0089C81E /* Controllers+Extensions */,
 				4CFFCE4C271C83A00089C81E /* SearchVC.swift */,
 				4CFFCE4E271C84BE0089C81E /* FavoritesListVC.swift */,
+				4CFFCE5B271DC1F30089C81E /* FollowerListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +189,14 @@
 				4CFFCE56271DA5F10089C81E /* StringConstants.swift */,
 			);
 			path = "String Constants";
+			sourceTree = "<group>";
+		};
+		4CFFCE58271DBC0D0089C81E /* Controllers+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CFFCE59271DBC350089C81E /* SearchVC+Extension.swift */,
+			);
+			path = "Controllers+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFFCE5C271DC1F30089C81E /* FollowerListVC.swift in Sources */,
 				4CFFCE54271DA4350089C81E /* GFTextField.swift in Sources */,
 				4CFFCE4F271C84BE0089C81E /* FavoritesListVC.swift in Sources */,
+				4CFFCE5A271DBC350089C81E /* SearchVC+Extension.swift in Sources */,
 				4CFFCE52271D9F080089C81E /* GFButton.swift in Sources */,
 				4CFFCE57271DA5F10089C81E /* StringConstants.swift in Sources */,
 				4CFFCE4D271C83A00089C81E /* SearchVC.swift in Sources */,
