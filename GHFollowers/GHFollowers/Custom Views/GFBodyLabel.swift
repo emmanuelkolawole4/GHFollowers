@@ -1,5 +1,5 @@
 //
-//  GFButton.swift
+//  GFBodyLabel.swift
 //  GHFollowers
 //
 //  Created by FOLAHANMI KOLAWOLE on 18/10/2021.
@@ -7,12 +7,11 @@
 
 import UIKit
 
-class GFButton: UIButton {
-  
+class GFBodyLabel: UILabel {
+
   // MARK: - INITIALIZERS
   override init(frame: CGRect) {
     super.init(frame: frame)
-    
     configure()
   }
   
@@ -20,20 +19,19 @@ class GFButton: UIButton {
     fatalError("init(coder:) has not been implemented")
   }
   
-  init(backgroundColor: UIColor, title: String) {
+  init(textAlignment: NSTextAlignment) {
     super.init(frame: .zero)
-    
-    self.backgroundColor = backgroundColor
-    self.setTitle(title, for: .normal)
+    self.textAlignment = textAlignment
     configure()
   }
   
   // MARK: - CUSTOM FUNCTIONS
   private func configure() {
-    layer.cornerRadius = 10
-    
-    titleLabel?.textColor = .white
-    titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+    textColor = .secondaryLabel
+    self.font = UIFont.preferredFont(forTextStyle: .body)
+    adjustsFontSizeToFitWidth = true
+    minimumScaleFactor = 0.75
+    lineBreakMode = .byWordWrapping
     
     translatesAutoresizingMaskIntoConstraints = false
   }

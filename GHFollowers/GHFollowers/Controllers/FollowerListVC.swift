@@ -12,6 +12,7 @@ class FollowerListVC: UIViewController {
   // MARK: - PROPERTIES
   var username: String!
   
+  // MARK: - VIEW LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
