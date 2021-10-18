@@ -11,12 +11,16 @@ enum StringConstants {
   
   enum SearchVC {
     
-    enum GFButton {
-      static let title = "Get Followers"
+    enum LogoImageView {
+      static let imageName = "gh-logo"
     }
     
     enum GFTextField {
       static let placeholderText = "Enter a username"
+    }
+    
+    enum GFButton {
+      static let title = "Get Followers"
     }
   }
 }
