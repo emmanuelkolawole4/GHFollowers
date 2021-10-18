@@ -35,7 +35,7 @@ class GFTextField: UITextField {
     
     autocorrectionType = .no
     
-    placeholder = StringConstants.GFTextField.placeholderText
+    placeholder = StringConstants.SearchVC.GFTextField.placeholderText
     
     translatesAutoresizingMaskIntoConstraints = false
   }

@@ -8,7 +8,15 @@
 import Foundation
 
 enum StringConstants {
-  enum GFTextField {
-    static let placeholderText = "Enter a username"
+  
+  enum SearchVC {
+    
+    enum GFButton {
+      static let title = "Get Followers"
+    }
+    
+    enum GFTextField {
+      static let placeholderText = "Enter a username"
+    }
   }
 }
