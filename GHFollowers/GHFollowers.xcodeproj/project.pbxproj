@@ -111,6 +111,7 @@
 		4C8EC5922719B83B00AA122D /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				4CFFCE5F271DE1250089C81E /* Extensions */,
 				4CFFCE55271DA5D10089C81E /* String Constants */,
 				4CFFCE50271D9EDD0089C81E /* Custom Views */,
 				4CFFCE4B271C83450089C81E /* Controllers */,
@@ -197,9 +198,16 @@
 			isa = PBXGroup;
 			children = (
 				4CFFCE59271DBC350089C81E /* SearchVC+Extension.swift */,
-				4CFFCE5D271DDC030089C81E /* String+Extension.swift */,
 			);
 			path = "Controllers+Extensions";
+			sourceTree = "<group>";
+		};
+		4CFFCE5F271DE1250089C81E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CFFCE5D271DDC030089C81E /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
