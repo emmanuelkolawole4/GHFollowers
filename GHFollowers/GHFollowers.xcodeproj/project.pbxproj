@@ -15,6 +15,7 @@
 		4C8EC5B62719B83F00AA122D /* GHFollowersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EC5B52719B83F00AA122D /* GHFollowersUITests.swift */; };
 		4CFFCE4D271C83A00089C81E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE4C271C83A00089C81E /* SearchVC.swift */; };
 		4CFFCE4F271C84BE0089C81E /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE4E271C84BE0089C81E /* FavoritesListVC.swift */; };
+		4CFFCE52271D9F080089C81E /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFCE51271D9F080089C81E /* GFButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4C8EC5B72719B83F00AA122D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CFFCE4C271C83A00089C81E /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		4CFFCE4E271C84BE0089C81E /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		4CFFCE51271D9F080089C81E /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		4C8EC5922719B83B00AA122D /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				4CFFCE50271D9EDD0089C81E /* Custom Views */,
 				4CFFCE4B271C83450089C81E /* Controllers */,
 				4CFFCE48271C830D0089C81E /* Application Delegates */,
 				4CFFCE4A271C83350089C81E /* Resources */,
@@ -158,6 +161,14 @@
 				4CFFCE4E271C84BE0089C81E /* FavoritesListVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4CFFCE50271D9EDD0089C81E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CFFCE51271D9F080089C81E /* GFButton.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFFCE4F271C84BE0089C81E /* FavoritesListVC.swift in Sources */,
+				4CFFCE52271D9F080089C81E /* GFButton.swift in Sources */,
 				4CFFCE4D271C83A00089C81E /* SearchVC.swift in Sources */,
 				4C8EC5942719B83B00AA122D /* AppDelegate.swift in Sources */,
 				4C8EC5962719B83B00AA122D /* SceneDelegate.swift in Sources */,
