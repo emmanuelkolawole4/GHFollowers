@@ -36,9 +36,12 @@ class SearchVC: UIViewController {
     view.addGestureRecognizer(tapGesture)
   }
   
+  func clearUsernameTextField() { usernameTextField.text = "" }
+  
   @objc func pushFollowerListVC() {
     guard isUsernameEntered else {
       print("No username entered")
+      presentGFAlertOnMainThread(title: StringConstants.SearchVC.AlertMessages.title, message: StringConstants.SearchVC.AlertMessages.message, buttonTitle: StringConstants.SearchVC.AlertMessages.buttonTitle)
       return
     }
     let followerListVC = FollowerListVC()
@@ -47,9 +50,6 @@ class SearchVC: UIViewController {
     navigationController?.pushViewController(followerListVC, animated: true)
   }
   
-  func clearUsernameTextField() {
-    usernameTextField.text = ""
-  }
   
   func configureLogoImageView() {
     view.addSubview(logoImageView)
@@ -94,3 +94,5 @@ class SearchVC: UIViewController {
     configureCallToActionButton()
   }
 }
+
+
