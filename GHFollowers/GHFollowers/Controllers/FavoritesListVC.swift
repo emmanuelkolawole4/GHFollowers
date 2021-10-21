@@ -9,6 +9,7 @@ import UIKit
 
 class FavoritesListVC: UIViewController {
   
+  // MARK: - VIEW LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBlue
