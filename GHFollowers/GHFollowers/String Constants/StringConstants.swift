@@ -34,3 +34,14 @@ enum StringConstants {
 enum Colors {
   static let transparentBlack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
 }
+
+enum ApiEndpoint {
+  static let baseURL = "https://api.github.com/users/"
+}
+
+enum ErrorMessage: String {
+  case invalidUsername = "This username created an invalid request. Please try again."
+  case unableToComplete = "Unable to complete your request. Please check your internet connection."
+  case invalidResponse = "Invalid response from the server. Please try again."
+  case invalidData = "The data received from the server was invalid. Please try again."
+}

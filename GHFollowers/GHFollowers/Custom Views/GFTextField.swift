@@ -40,6 +40,7 @@ class GFTextField: UITextField {
     placeholder = StringConstants.SearchVC.GFTextField.placeholderText
     
     returnKeyType = .go
+    clearButtonMode = .whileEditing
     
     translatesAutoresizingMaskIntoConstraints = false
   }

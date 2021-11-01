@@ -26,7 +26,8 @@ class SearchVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    navigationController?.isNavigationBarHidden = true
+//    navigationController?.isNavigationBarHidden = true
+    navigationController?.setNavigationBarHidden(true, animated: true)
     clearUsernameTextField()
   }
   
@@ -39,6 +40,7 @@ class SearchVC: UIViewController {
   func clearUsernameTextField() { usernameTextField.text = "" }
   
   @objc func pushFollowerListVC() {
+    self.view.endEditing(true)
     guard isUsernameEntered else {
       print("No username entered")
       presentGFAlertOnMainThread(title: StringConstants.SearchVC.AlertMessages.title, message: StringConstants.SearchVC.AlertMessages.message, buttonTitle: StringConstants.SearchVC.AlertMessages.buttonTitle)
