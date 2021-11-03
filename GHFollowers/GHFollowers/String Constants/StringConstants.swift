@@ -35,6 +35,10 @@ enum Colors {
   static let transparentBlack = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
 }
 
+enum Images {
+  static let avatarImage = UIImage(named: "avatar-placeholder")
+}
+
 enum ApiEndpoint {
   static let baseURL = "https://api.github.com/users/"
 }
