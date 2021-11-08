@@ -10,8 +10,14 @@ import UIKit
 class FollowerListVC: UIViewController {
   
   // MARK: - PROPERTIES
+  enum Section {
+    case main
+  }
+  
   var username: String!
+  var followers: [Follower] = []
   var collectionView: UICollectionView!
+  var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   
   // MARK: - VIEW LIFECYCLE METHODS
   override func viewDidLoad() {
@@ -19,6 +25,7 @@ class FollowerListVC: UIViewController {
     configureViewController()
     configureCollectionView()
     getFollowers()
+    configureDataSource()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +42,23 @@ class FollowerListVC: UIViewController {
   func configureCollectionView() {
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
     view.addSubview(collectionView)
-    collectionView.backgroundColor = .systemPink
+    collectionView.backgroundColor = .systemBackground
     collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseIdentifier)
+  }
+  
+  func configureDataSource() {
+    dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseIdentifier, for: indexPath) as? FollowerCell else { return UICollectionViewCell() }
+      cell.set(follower: follower)
+      return cell
+    })
+  }
+  
+  func updateData() {
+    var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+    snapshot.appendSections([.main])
+    snapshot.appendItems(followers)
+    dataSource.apply(snapshot, animatingDifferences: true)
   }
   
   func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -59,6 +81,8 @@ class FollowerListVC: UIViewController {
       case .failure(let error):
         self.presentGFAlertOnMainThread(title: "ERROR!!!", message: error.rawValue, buttonTitle: "OK")
       case .success(let followers):
+        self.followers = followers
+        self.updateData()
         dump("Followers.count: \(followers.count)")
       }
     }
