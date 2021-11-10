@@ -28,6 +28,7 @@ class FollowerCell: UICollectionViewCell, ReuseIdentifying {
   // MARK: - CUSTOM FUNCTIONS
   func set(follower: Follower) {
     usernameLabel.text = follower.login
+    avatarImageView.downloadImage(from: follower.avatarUrl)
   }
   
   private func configure() {
