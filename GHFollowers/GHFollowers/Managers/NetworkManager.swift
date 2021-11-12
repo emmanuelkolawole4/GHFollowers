@@ -5,11 +5,12 @@
 //  Created by FOLAHANMI KOLAWOLE on 25/10/2021.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
   
   static let shared = NetworkManager()
+  let cache = NSCache<NSString, UIImage>()
   
   private init() {}
   
