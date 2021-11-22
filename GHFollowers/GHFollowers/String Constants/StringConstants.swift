@@ -37,6 +37,7 @@ enum Colors {
 
 enum Images {
   static let avatarImage = UIImage(named: "avatar-placeholder")
+  static let emptyStateImage = UIImage(named: "empty-state-logo")
 }
 
 enum ApiEndpoint {
