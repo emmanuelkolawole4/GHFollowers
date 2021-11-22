@@ -40,6 +40,7 @@ class FollowerListVC: UIViewController {
   func configureViewController() {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.hidesSearchBarWhenScrolling = false
   }
   
   func configureCollectionView() {
@@ -115,6 +116,6 @@ extension FollowerListVC: UICollectionViewDelegate {
 extension FollowerListVC: UISearchResultsUpdating {
   
   func updateSearchResults(for searchController: UISearchController) {
-    
+    guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
   }
 }
