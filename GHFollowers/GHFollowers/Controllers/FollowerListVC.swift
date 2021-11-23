@@ -16,9 +16,11 @@ class FollowerListVC: UIViewController {
   
   var username: String!
   var followers: [Follower] = []
+  var filteredFollowers: [Follower] = []
   var page = 1
   var hasMoreFollowers = true
   var collectionView: UICollectionView!
+  var searchController: UISearchController!
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   
   // MARK: - VIEW LIFECYCLE METHODS
@@ -52,8 +54,9 @@ class FollowerListVC: UIViewController {
   }
   
   func configureSearchController() {
-    let searchController = UISearchController()
+    searchController = UISearchController()
     searchController.searchResultsUpdater = self
+    searchController.searchBar.delegate = self
     searchController.searchBar.placeholder = "Search for a username"
     searchController.obscuresBackgroundDuringPresentation = false
     navigationItem.searchController = searchController
@@ -67,7 +70,7 @@ class FollowerListVC: UIViewController {
     })
   }
   
-  func updateData() {
+  func updateData(on followers: [Follower]) {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
     snapshot.appendSections([.main])
     snapshot.appendItems(followers)
@@ -90,7 +93,9 @@ class FollowerListVC: UIViewController {
           DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
           return
         }
-        self.updateData()
+        DispatchQueue.main.async {
+          self.updateData(on: self.followers)
+        }
         dump("Followers.count: \(followers.count)")
       }
     }
@@ -113,9 +118,27 @@ extension FollowerListVC: UICollectionViewDelegate {
 }
 
 
-extension FollowerListVC: UISearchResultsUpdating {
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
   
   func updateSearchResults(for searchController: UISearchController) {
-    guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+    guard let filter = searchController.searchBar.text?.lowercased(), !filter.isEmpty else {
+      filteredFollowers.removeAll()
+      DispatchQueue.main.async {
+        self.updateData(on: self.followers)
+      }
+      return
+    }
+    filteredFollowers = followers.filter({ follower in
+      follower.login.lowercased().contains(filter)
+    })
+    DispatchQueue.main.async {
+      self.updateData(on: self.filteredFollowers)
+    }
   }
+  
+//  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//    DispatchQueue.main.async {
+//      self.updateData(on: self.followers)
+//    }
+//  }
 }
